@@ -1,5 +1,4 @@
-﻿using System.Collections.Concurrent;
-using App;
+﻿using App;
 bool running = true;
 
     Console.Clear();
@@ -25,7 +24,7 @@ Reception Hotel = new Reception(rooms);
     
 while (running)
 {
-
+    Console.Clear();
     // Man ska kunna dessa: Se lista av upptagna rum och lediga rum, boka in, checka ut, markera otillgänligt
     Console.WriteLine("*****Meny*****");
     Console.WriteLine("____________________");
