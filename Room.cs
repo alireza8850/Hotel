@@ -15,4 +15,19 @@ public class Room
         GuestName = guestname;
     }
 
+    public override string ToString()
+    {
+        string DispGuest;
+        if (string.IsNullOrWhiteSpace(GuestName))
+        {
+            DispGuest = "_";
+        }
+        else
+        {
+            DispGuest = GuestName;
+        }
+
+        return Number + " , " + Status + " , " + DispGuest;
+    }
+
 }

@@ -1,8 +1,7 @@
 ﻿using System.Collections.Concurrent;
 using App;
 bool running = true;
-while (running)
-{
+
     Console.Clear();
     Console.WriteLine("5 star Hotel");
     Console.WriteLine();
@@ -21,6 +20,11 @@ while (running)
 
     }
 
+    List<Room> rooms = FileData.AllRooms();
+Reception Hotel = new Reception(rooms);
+    
+while (running)
+{
 
     // Man ska kunna dessa: Se lista av upptagna rum och lediga rum, boka in, checka ut, markera otillgänligt
     Console.WriteLine("*****Meny*****");
@@ -39,6 +43,8 @@ while (running)
     switch (input)
     {
         case "1":
+
+            Hotel.ShowOccupiedRooms();
 
         break;
         case "0":
