@@ -29,8 +29,8 @@ while (running)
     Console.WriteLine("*****Meny*****");
     Console.WriteLine("____________________");
     Console.WriteLine();
-    Console.WriteLine("1. Upptagna rum.");
-    Console.WriteLine("2. Lediga rum.");
+    Console.WriteLine("1. Upptagna rum.");                //Klar
+    Console.WriteLine("2. Lediga rum.");                    //Klar
     Console.WriteLine("3. Boka in en gäst.");
     Console.WriteLine("4. Checka ut gäst.");
     Console.WriteLine("5.Markera rum som temporärt otillgänligt.");
@@ -45,7 +45,12 @@ while (running)
 
             Hotel.ShowOccupiedRooms();
 
-        break;
+            break;
+
+        case "2":
+            Hotel.Available();
+            break;
+
         case "0":
             running = false;
             Console.Clear();
