@@ -12,7 +12,7 @@ public static class FileData
         if (!File.Exists(RoomsFile))
         {
             int a = 0;
-            while (a < 5)
+            while (a < 10)
             {
                 int RoomNumber = 1 + a;
                 rooms.Add(new Room(RoomNumber, RoomStatus.Empty, ""));
@@ -21,7 +21,6 @@ public static class FileData
             SaveRooms(rooms);
             return rooms;
         }
-        
         // Bara en notering för mig själv
         // vi behöver läsa alla rader, dela upp, konvertera till rätt typer, bygga room objekt och lägga i listan
         // (göra om texten i Rooms.txt till riktig room objekt i minnet)
@@ -30,7 +29,7 @@ public static class FileData
         if (lines.Length == 0)
                 {
                     int a = 0;
-                    while (a < 5)
+                    while (a < 10)
                     {
                         int RoomNumber = 1 + a;
                         rooms.Add(new Room(RoomNumber, RoomStatus.Empty, ""));

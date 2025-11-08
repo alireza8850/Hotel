@@ -29,9 +29,9 @@ while (running)
     Console.WriteLine("*****Meny*****");
     Console.WriteLine("____________________");
     Console.WriteLine();
-    Console.WriteLine("1. Upptagna rum.");                //Klar
+    Console.WriteLine("1. Upptagna rum.");                  //Klar
     Console.WriteLine("2. Lediga rum.");                    //Klar
-    Console.WriteLine("3. Boka in en gäst.");
+    Console.WriteLine("3. Boka in en gäst.");               //Klar
     Console.WriteLine("4. Checka ut gäst.");
     Console.WriteLine("5.Markera rum som temporärt otillgänligt.");
     Console.WriteLine("0. Avsluta");
@@ -51,13 +51,40 @@ while (running)
             Hotel.Available();
             break;
 
+        case "3":
+            Console.WriteLine("Rum nummer: ");
+            string input2 = Console.ReadLine();
+            int RoomNumber;
+            if (!int.TryParse(input2, out RoomNumber))    //använder tryparse metoden för att försöka omvandla inputen till int
+            {
+                Console.WriteLine("Ogiltigt nummer.");  // om omvandligen misslycaks skriv detta
+            }
+            else
+            {
+                Console.WriteLine("Gästens namn: ");
+                string Name = Console.ReadLine();
+                if (string.IsNullOrWhiteSpace(Name))       
+                {
+                    Console.WriteLine("Ogiltigt namn.");     // om den är tom eller white space skriv detta
+
+                }
+                else                                    
+                {
+                    Hotel.BookIn(RoomNumber, Name);
+                    Console.WriteLine("Trycket Enter för att fortsätta.");
+                    Console.ReadLine();
+                }
+
+            }
+            break;
+
         case "0":
-            running = false;
-            Console.Clear();
-            Console.WriteLine(":)");
-            
-        break;
-        
-    }
+                    running = false;
+                    Console.Clear();
+                    Console.WriteLine(":)");
+
+                    break;
+
+                }
     
 }
