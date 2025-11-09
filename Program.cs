@@ -30,11 +30,11 @@ while (running)
     Console.WriteLine("*****Meny*****");
     Console.WriteLine("____________________");
     Console.WriteLine();
-    Console.WriteLine("1. Upptagna rum.");                  //Klar
-    Console.WriteLine("2. Lediga rum.");                    //Klar
-    Console.WriteLine("3. Boka in en gäst.");               //Klar
-    Console.WriteLine("4. Checka ut gäst.");                //Klar
-    Console.WriteLine("5.Markera rum som temporärt otillgänligt.");
+    Console.WriteLine("1. Upptagna rum.");                                    //Klar
+    Console.WriteLine("2. Lediga rum.");                                      //Klar
+    Console.WriteLine("3. Boka in en gäst.");                                 //Klar
+    Console.WriteLine("4. Checka ut gäst.");                                  //Klar
+    Console.WriteLine("5.Markera rum som temporärt otillgänligt.");           //Klar
     Console.WriteLine("0. Avsluta");
     Console.WriteLine("_____________________");
     Console.WriteLine();

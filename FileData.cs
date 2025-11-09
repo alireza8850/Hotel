@@ -2,14 +2,14 @@ namespace App;
 
 public static class FileData
 {
-    private const string RoomsFile = "Rooms.txt";
+    private const string RoomsFile = "Rooms.txt";                            //värden ska sparas i Rooms.txt
     private const char Seperate = ',';
-    public static List<Room> AllRooms()
+    public static List<Room> AllRooms()                 //ladda alla rum
     {
-        List<Room> rooms = new List<Room>();
+        List<Room> rooms = new List<Room>();                //skapa en tom lista för rum
 
 
-        if (!File.Exists(RoomsFile))
+        if (!File.Exists(RoomsFile))                    //kolla om filen inte finns, skapa 10 rum och spara dem till fil
         {
             int a = 0;
             while (a < 10)
