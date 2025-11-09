@@ -96,7 +96,21 @@ while (running)
             break;
 
         case "5":
-            break;
+            Console.WriteLine("Rumnummer: ");
+            string? input4 = Console.ReadLine();
+            int RoomNumber2;
+            if (!int.TryParse(input4, out RoomNumber2))
+            {
+                Console.WriteLine("Ogiltigt nummer.");
+
+            }
+            else
+            {
+                Hotel.Unavailable(RoomNumber2);
+                Console.WriteLine("Trycket Enter för att fortsätta.");
+                Console.ReadLine(); 
+            }
+                break;
 
         case "0":
                     running = false;

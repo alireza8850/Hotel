@@ -131,21 +131,24 @@ public class Reception
         while (i < _rooms.Count)                                            //loopa genom
         {
             Room room_i = _rooms[i];
-            if (room_i.Status == RoomStatus.Occupied)                       // om rummet är upptaget
+            if (room_i.Number == RoomNumber)                                //kolla om det är rätt rum
             {
-                Console.WriteLine("Rummet är upptaget.");
-                return false;
-            }
-            else
-            {
-                room_i.Status = RoomStatus.Unavailable;                         //byt stauset till unavailable
-                room_i.GuestName = "";
-                FileData.SaveRooms(_rooms);
-                Console.WriteLine();
-                Console.WriteLine("Markerad som temporät otillgänligt.");
-                Console.WriteLine();
-                return true;
+                if (room_i.Status == RoomStatus.Occupied)                       // om rummet är upptaget
+                {
+                    Console.WriteLine("Rummet är upptaget.");
+                    return false;
+                }
+                else
+                {
+                    room_i.Status = RoomStatus.Unavailable;                         //byt stauset till unavailable
+                    room_i.GuestName = "";
+                    FileData.SaveRooms(_rooms);
+                    Console.WriteLine();
+                    Console.WriteLine("Markerad som temporät otillgänligt.");
+                    Console.WriteLine();
+                    return true;
 
+                }
             }
             i = i + 1;
         }
