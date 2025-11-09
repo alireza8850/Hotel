@@ -1,4 +1,5 @@
-﻿using App;
+﻿using System.Data;
+using App;
 bool running = true;
 
     Console.Clear();
@@ -32,7 +33,7 @@ while (running)
     Console.WriteLine("1. Upptagna rum.");                  //Klar
     Console.WriteLine("2. Lediga rum.");                    //Klar
     Console.WriteLine("3. Boka in en gäst.");               //Klar
-    Console.WriteLine("4. Checka ut gäst.");
+    Console.WriteLine("4. Checka ut gäst.");                //Klar
     Console.WriteLine("5.Markera rum som temporärt otillgänligt.");
     Console.WriteLine("0. Avsluta");
     Console.WriteLine("_____________________");
@@ -76,6 +77,22 @@ while (running)
                 }
 
             }
+            break;
+        case "4":
+            Console.WriteLine("Rumnummer: ");
+            string input3 = Console.ReadLine();
+            int RoomNumber1;
+            if (!int.TryParse(input3, out RoomNumber1)) 
+            {
+                Console.WriteLine("Ogitligt nummer");    // om misslayckas (tex den är inte en siffra) skriv detta
+            }
+            else                                           // annars (om lyckades) gör detta
+            {
+                Hotel.CheckOut(RoomNumber1);   
+                Console.WriteLine("Trycket Enter för att fortsätta.");
+                Console.ReadLine();          
+            }
+
             break;
 
         case "0":

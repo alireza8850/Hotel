@@ -69,7 +69,7 @@ public class Reception
         while (i < _rooms.Count)                // Loopar genom så länge vi inte nåt slutet av rumlistan
         {
             Room room_i = _rooms[i];
-            
+
             if (room_i.Number == RoomNumber)    // kontrollera om det rätt rum
             {
                 if (room_i.Status == RoomStatus.Empty)   // kontrollera om rummet är ledigt
@@ -89,7 +89,37 @@ public class Reception
                 }
             }
             i = i + 1;
-            
+
+        }
+        Console.WriteLine("hittade inte rum " + RoomNumber + ".");
+        return false;
+    }
+    
+    public bool CheckOut(int RoomNumber)    //metoden för att checka ut
+    {                                    // nästan samma som inbookning, loopa genom alla rumlistan ändra på staus och tom plats för namn
+        int i = 0;
+        while (i < _rooms.Count)
+        {
+            Room room_i = _rooms[i];
+            if (room_i.Number == RoomNumber)
+            {
+                if (room_i.Status == RoomStatus.Occupied)
+                {
+                    room_i.Status = RoomStatus.Empty;
+                    room_i.GuestName = "";
+                    FileData.SaveRooms(_rooms);
+                    Console.WriteLine();
+                    Console.WriteLine("Utckeckad.");
+                    Console.WriteLine();
+                    return true;
+                }
+                else
+                {
+                    Console.WriteLine("Rummet är inte upptagen.");
+                    return false;
+                }
+            }
+            i = i + 1;
         }
         Console.WriteLine("hittade inte rum " + RoomNumber + ".");
         return false;
