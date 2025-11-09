@@ -8,7 +8,7 @@ public class Reception
         _rooms = rooms;
     }
 
-    public void ShowOccupiedRooms()
+    public void ShowOccupiedRooms()                         // visa upptagna rum
     {
         Console.WriteLine("Alla upptagna rum: ");
 
@@ -18,7 +18,7 @@ public class Reception
         while (i < _rooms.Count)
         {
             Room room_i = _rooms[i];
-            if (room_i.Status == RoomStatus.Occupied)
+            if (room_i.Status == RoomStatus.Occupied)                   // kolla status om den är Occupied
             {
                 Console.WriteLine(room_i.ToString());
                 Found = true;

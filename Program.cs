@@ -12,7 +12,7 @@ bool running = true;
     string? Password = Console.ReadLine();
     Console.Clear();
 
-    bool ok = Login.TryLogin(Username, Password);
+    bool ok = Login.TryLogin(Username, Password);              // försök att logga in med username och password
     if (!ok)
     {
         Console.WriteLine("Fel inloggning. Försök igen.");
@@ -20,8 +20,9 @@ bool running = true;
 
     }
 
-    List<Room> rooms = FileData.AllRooms();
-Reception Hotel = new Reception(rooms);
+List<Room> rooms = FileData.AllRooms();       //kalla på AllRooms i FileData Klassen, skapar en lista med Room obj som sparas i rooms)
+Reception Hotel = new Reception(rooms);      //skapa ett nytt obj av Reception, skicka rumlistan(rooms) till Receptions Konstuktor och
+                                            // den nya sparas i Hotel variabeln.
     
 while (running)
 {
