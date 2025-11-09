@@ -54,7 +54,7 @@ while (running)
 
         case "3":
             Console.WriteLine("Rum nummer: ");
-            string input2 = Console.ReadLine();
+            string? input2 = Console.ReadLine();
             int RoomNumber;
             if (!int.TryParse(input2, out RoomNumber))    //använder tryparse metoden för att försöka omvandla inputen till int
             {
@@ -63,7 +63,7 @@ while (running)
             else
             {
                 Console.WriteLine("Gästens namn: ");
-                string Name = Console.ReadLine();
+                string? Name = Console.ReadLine();
                 if (string.IsNullOrWhiteSpace(Name))       
                 {
                     Console.WriteLine("Ogiltigt namn.");     // om den är tom eller white space skriv detta
@@ -80,7 +80,7 @@ while (running)
             break;
         case "4":
             Console.WriteLine("Rumnummer: ");
-            string input3 = Console.ReadLine();
+            string? input3 = Console.ReadLine();
             int RoomNumber1;
             if (!int.TryParse(input3, out RoomNumber1)) 
             {
@@ -93,6 +93,9 @@ while (running)
                 Console.ReadLine();          
             }
 
+            break;
+
+        case "5":
             break;
 
         case "0":
